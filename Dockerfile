@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nodejs \
     npm \
     curl \
+    cron \
     && rm -rf /var/lib/apt/lists/* \
     && pip3 install --break-system-packages feedparser==6.0.13
 
