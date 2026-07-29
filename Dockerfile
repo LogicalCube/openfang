@@ -23,7 +23,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv \
     nodejs \
     npm \
-    && rm -rf /var/lib/apt/lists/*
+    curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --break-system-packages feedparser==6.0.13
 
 COPY --from=builder /build/target/release/openfang /usr/local/bin/
 COPY --from=builder /build/agents /opt/openfang/agents
